@@ -1,3 +1,59 @@
+## EPDS 2025 Project
+
+### Tech Stack
+- **Backend:** Laravel 12 (PHP)
+- **Frontend:** Vite, Tailwind CSS
+- **Dev Environment:** Laravel Sail (Docker)
+- **Hot Reload:** Vite (JS/CSS), Browsersync (Blade/PHP)
+
+### Setup Instructions
+
+1. **Clone the repository:**
+	```bash
+	git clone <repo-url>
+	cd epds-2025
+	```
+
+2. **Copy the example environment file and set your environment variables:**
+	```bash
+	cp .env.example .env
+	# Edit .env as needed
+	```
+
+3. **Start Sail (Docker environment):**
+	```bash
+	./vendor/bin/sail up -d
+	# or, if you have the sail alias:
+	sail up -d
+	```
+
+4. **Install Composer and NPM dependencies:**
+	```bash
+	sail composer install
+	sail npm install
+	```
+
+5. **Generate application key:**
+	```bash
+	sail artisan key:generate
+	```
+
+6. **Run database migrations (optional):**
+	```bash
+	sail artisan migrate
+	```
+
+7. **Start the Vite dev server (with Browsersync for Blade/PHP hot reload):**
+	```bash
+	sail npm run dev
+	```
+	- Open the Browsersync URL shown in the terminal (e.g., http://localhost:3000/) for automatic reloads on Blade/PHP and frontend changes.
+
+8. **Access your app:**
+	- Laravel backend: http://localhost
+	- Frontend with hot reload: http://localhost:3000
+
+---
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
